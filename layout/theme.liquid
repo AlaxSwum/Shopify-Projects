@@ -7,14 +7,21 @@
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script async src="{{ 'application.js' | asset_url }}"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+
   </head>
   <body>
+    {% section 'header' %}
     <main role="main">
       {{ content_for_layout }}
     </main>
   </body>
 </html>
+
+<script src="https://cdn.tailwindcss.com" async></script>
